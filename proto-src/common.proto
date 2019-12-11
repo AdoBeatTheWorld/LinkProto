@@ -22,7 +22,7 @@ enum MSG_CLIENT_TO_SERVER_SUBID
 
 message Header
 {
-
+    int32 sign = 1;
 }
 
 message KeepAliveReq
