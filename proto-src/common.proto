@@ -1,0 +1,38 @@
+syntax = "proto3";
+package linkproto.common;
+
+enum MAINID
+{
+	MAIN_MSG_CLIENT_ID_BEGIN = 0;
+	MAIN_MSG_CLIENT_TO_PROXY = 1;
+	MAIN_MSG_CLIENT_TO_HALL = 2;
+	MAIN_MSG_CLIENT_TO_GAME = 3;
+	MAIN_MSG_HALL_TO_PROXY = 4;
+	MAIN_MSG_GAME_TO_PROXY = 5;
+	MAIN_MSG_CLIENT_TO_MISC = 6;
+	MAIN_MSG_MISC_TO_PROXY = 7;
+}
+
+enum MSG_CLIENT_TO_SERVER_SUBID
+{
+	MSG_CLIENT_TO_SERVER_SUBID_BEGIN = 0;
+	KEEP_ALIVE_REQ	= 1;
+	KEEP_ALIVE_RES	= 2;
+}
+
+message Header
+{
+
+}
+
+message KeepAliveReq
+{
+	string session = 1;
+}
+
+message KeepAliveRes
+{
+	int32 retCode  = 1;
+	string errMsg  = 2;
+	int64 timenow = 3;
+}

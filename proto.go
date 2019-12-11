@@ -1,4 +1,4 @@
-package proto
+package linkproto
 
 type AddReq struct {
 	A, B int
